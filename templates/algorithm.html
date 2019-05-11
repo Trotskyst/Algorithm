@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    {{ algorithms.name }}
+{% endblock title %}
+
+
+{% block body %}
+    <div class="container">
+    <h1>{{ algorithms.name }}</h1>
+
+    {% include 'algorithm_description.html' with algorithm=algorithms %}
+</div>
+
+{% endblock body %}

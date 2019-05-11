@@ -1,0 +1,16 @@
+.UnderFooter {
+    margin-top: 70px;
+}
+
+.centering {
+    float: none;
+    margin: 0 auto
+}
+
+.menu_left {
+    width: 18rem;
+}
+
+.main {
+    width: calc(100% - 18rem);
+}

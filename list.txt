@@ -1,0 +1,23 @@
+сортировка пузырьком (booble sort)
+сортировка выбором (selection sort)
+сортировка вставками (insertion sort)
+- Merge Sort
+
+ Searching Algorithms
+- Liear Search
+- Binary Search
+
+String Reverse Algorithm
+
+Hashing algorithm (Caesar cipher)
+
+Fibonacci sequence
+
+Factorial Algorithm
+
+
+
+https://www.programcreek.com/2012/11/top-10-algorithms-for-coding-interview/
+https://techrocks.ru/2018/11/02/50-questions-for-tech-interview/
+https://tproger.ru/experts/getting-prepared-to-algorithms-interview/
+https://proglib.io/p/algorithm-questions/

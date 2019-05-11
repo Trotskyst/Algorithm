@@ -1,0 +1,47 @@
+{% regroup algorithms by group as group_list %}
+{#{{ group_list }}#}
+{#                {% for item in group.list %}#}
+{#                    {{ item.name }}#}
+{#{% endfor %}#}
+
+<div class="accordion" style="max-width: 18rem;">
+
+    {% for group in group_list %}
+
+        <div class="card bg-light">
+            <div class="card-header p-0" id="accordion_head_{{ group.grouper.id }}">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-sm " type="button" data-toggle="collapse"
+                            data-target="#collapse_{{ group.grouper.id }}"
+                            aria-expanded="true" aria-controls="collapse_{{ group.grouper.id }}">
+                        <h5>{{ group.grouper }}</h5>
+                    </button>
+                </h2>
+            </div>
+
+            <div id="collapse_{{ group.grouper.id }}" class="collapse
+                    {% if algorithm.group.slug == group.grouper.slug %}
+                       show
+                    {% endif %}
+                "
+                 aria-labelledby="accordion_head_{{ group.grouper.id }}" data-parent=".accordion">
+
+                {% for item in group.list %}
+
+                        <a href="{% url 'algorithm' group=group.grouper.slug algorithm=item.slug %}" type="button"
+                           class="btn
+                    {% if algorithm.slug == item.slug %}
+                        btn-success
+                    {% else %}
+                        btn-secondary
+                    {% endif %}
+                         mb-1 mt-1 btn-sm w-100">{{ item.name }}</a>
+
+                {% endfor %}
+
+            </div>
+        </div>
+
+    {% endfor %}
+
+</div>

@@ -1,0 +1,30 @@
+{% load staticfiles %}
+<head>
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}"/>
+    <script src="{% static 'js/jquery-3.4.0.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="row">
+        <div class="menu_left">
+            {% include 'menu_left.html' with algorithms=algorithms_menu algorithm=algorithms %}
+        </div>
+
+        <div class="main">
+            {% block body %}{% endblock body %}
+        </div>
+
+    </div>
+
+
+</div>
+
+</body>
+</html>
+
