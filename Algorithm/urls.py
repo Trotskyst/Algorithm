@@ -22,4 +22,5 @@ urlpatterns = [
     path('', index_view, name='index'),
     path('<str:group>/<str:algorithm>', algorithm_view, name='algorithm'),
     path('generation_algorithm_<int:id>', generation_algorithm_view, name='generation_algorithm'),
+    path('speed_test_algorithm', speed_test_algorithm, name='speed_test_algorithm'),
 ]

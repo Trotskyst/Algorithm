@@ -1,0 +1,11 @@
+<h2>Результат выполнения сравнения</h2>
+
+Количество проведенных тестов: {{ count_tests }}<br>
+Размер списка: до {{ max_list_size }}<br>
+Значение элементов списка: до {{ max_value_element }}<br><br>
+
+<ol>
+    {% for key, value in timer_list %}
+        <li>{{ key }} - {{ value|floatformat:3 }} сек.</li>
+    {% endfor %}
+    </ol>

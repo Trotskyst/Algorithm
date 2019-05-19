@@ -14,7 +14,7 @@ def slugify(s):
     return django_slugify(''.join(alphabet.get(w, w) for w in s.lower()))
 
 class GroupAlgorithm(models.Model):
-    name = models.CharField(max_length=200, verbose_name="Название группы алгоритма")
+    name = models.CharField(max_length=200)
     slug = models.CharField(max_length=200, verbose_name="ЧПУ", blank=True)
 
     def __str__(self):
@@ -22,6 +22,8 @@ class GroupAlgorithm(models.Model):
 
     class Meta:
         ordering = ['id',]
+        verbose_name = "Название группы"
+        verbose_name_plural = "Группы"
 
     def save(self, *args, **kwargs):
         self.slug = slugify(str(self.id)+'_'+self.name)
@@ -29,12 +31,14 @@ class GroupAlgorithm(models.Model):
 
 
 class Algorithm(models.Model):
-    name = models.CharField(max_length=200, verbose_name="Название алгоритма")
+    name = models.CharField(max_length=200)
     group = models.ForeignKey(GroupAlgorithm, related_name='group', verbose_name="Группа", on_delete=models.CASCADE)
     slug = models.CharField(max_length=200, verbose_name="ЧПУ", blank=True)
 
     class Meta:
         ordering = ['id',]
+        verbose_name = "Название алгоритма"
+        verbose_name_plural = "Алгоритмы"
 
     def __str__(self):
         return self.name
